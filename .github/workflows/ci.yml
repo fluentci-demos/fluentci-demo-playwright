@@ -17,9 +17,9 @@ jobs:
             install
         env:
           GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Run e2e tests
+      - name: Run Playwright tests
         run: |
-          fluentci run --wasm playwright install
+          fluentci run --wasm playwright install --with-deps
           fluentci run --wasm playwright test
         env:
           GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
